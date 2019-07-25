@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_010351) do
     t.boolean "completed"
     t.datetime "start"
     t.integer "duration"
-    t.string "due_date"
-    t.string "datetime"
+    t.datetime "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
