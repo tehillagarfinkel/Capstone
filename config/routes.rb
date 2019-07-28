@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     delete "/tasks/:id" => "tasks#destroy"
 
     get "categories" => "categories#index"
+    get "categories/:id" => "categories#show"
   end
 end
