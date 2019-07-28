@@ -1,0 +1,3 @@
+@tasks.map do |task|
+  render partial: "task.json.jb", locals: { task: task }
+end
