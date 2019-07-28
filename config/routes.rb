@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
 
     get "/tasks" => "tasks#index"
+    get "/tasks/:id" => "tasks#show"
   end
 end
