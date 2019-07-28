@@ -1,4 +1,5 @@
 {
+  id: task.id,
   description: task.description,
   user_id: task.user_id,
   category_id: task.category_id,
