@@ -6,6 +6,7 @@ Category.create!(name: "food")
 Category.create!(name: "home")
 Category.create!(name: "clothing")
 Category.create!(name: "travel")
+Category.create!(name: "shopping")
 
 Task.create!(description: "fix bookshelf", user_id: 2, category_id: 2, completed: "FALSE", duration: 60, due_date: 20.days.from_now)
 Task.create!(description: "buy milk", user_id: 1, category_id: 1, completed: "FALSE", duration: 20, due_date: 5.days.from_now)
