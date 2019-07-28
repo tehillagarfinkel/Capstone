@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get "/tasks/:id" => "tasks#show"
     patch "/tasks/:id" => "tasks#update"
     delete "/tasks/:id" => "tasks#destroy"
+
+    get "categories" => "categories#index"
   end
 end
