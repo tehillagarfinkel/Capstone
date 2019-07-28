@@ -35,4 +35,10 @@ class Api::TasksController < ApplicationController
     @task.save
     render "show.json.jb"
   end
+
+  def destroy
+    @task = Task.find_by(id: params[:id])
+    @task.destroy
+    render json: { message: "Task successfully deleted" }
+  end
 end
