@@ -1,6 +1,7 @@
 User.create!(name: "Tehilla", email: "tehilla@email.com", password: "password")
 User.create!(name: "Rachel", email: "rachel@email.com", password: "password")
 User.create!(name: "Ariella", email: "ariella@email.com", password: "password")
+User.create!(name: "Adina", email: "adina@email.com", password: "password")
 
 Category.create!(name: "food")
 Category.create!(name: "home")
