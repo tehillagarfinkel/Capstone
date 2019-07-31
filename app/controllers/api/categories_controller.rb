@@ -25,4 +25,10 @@ class Api::CategoriesController < ApplicationController
     @category.save
     render "show.json.jb"
   end
+
+  def destroy
+    @category = Category.find_by(id: params[:id])
+    @category.destroy
+    render json: { message: "Category successfully deleted" }
+  end
 end
