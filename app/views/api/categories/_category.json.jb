@@ -2,4 +2,5 @@
   id: category.id,
   name: category.name,
   image: category.image,
+  user_id: category.user_id,
 }

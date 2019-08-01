@@ -7,7 +7,6 @@ class Api::TasksController < ApplicationController
   def create
     @task = Task.new(
       description: params[:description],
-      user_id: current_user.id,
       category_id: params[:category_id],
       start: params[:start],
       duration: params[:duration],
@@ -24,7 +23,6 @@ class Api::TasksController < ApplicationController
 
   def update
     @task = Task.find_by(id: params[:id])
-    @user_id = current_user.id
     @task.description = params[:description] || @task.description
     @task.category_id = params[:category_id] || @task.category_id
     @task.completed = params[:completed] || @task.completed

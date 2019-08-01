@@ -8,6 +8,7 @@ class Api::CategoriesController < ApplicationController
     @category = Category.new(
       name: params[:name],
       image: params[:image],
+      user_id: params[:user_id],
     )
     @category.save
     render "show.json.jb"
@@ -22,6 +23,7 @@ class Api::CategoriesController < ApplicationController
     @category = Category.find_by(id: params[:id])
     @category.name = params[:name] || @category.name
     @category.image = params[:image] || @category.image
+    @category.user_id = params[:user_id] || @category.user_id
     @category.save
     render "show.json.jb"
   end
