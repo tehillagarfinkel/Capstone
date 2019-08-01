@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 2019_07_25_010351) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tasks", force: :cascade do |t|
     t.string "description"
-    t.integer "user_id"
     t.integer "category_id"
     t.boolean "completed"
     t.datetime "start"
