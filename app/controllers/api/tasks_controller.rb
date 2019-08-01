@@ -1,23 +1,15 @@
 class Api::TasksController < ApplicationController
-  def index
-    @tasks = Task.all
-    render "index.json.jb"
-  end
+  before_action :authenticate_user
 
   def create
     @task = Task.new(
-      description: params[:description],
       category_id: params[:category_id],
+      description: params[:description],
       start: params[:start],
       duration: params[:duration],
       due_date: params[:due_date],
     )
     @task.save
-    render "show.json.jb"
-  end
-
-  def show
-    @task = Task.find_by(id: params[:id])
     render "show.json.jb"
   end
 

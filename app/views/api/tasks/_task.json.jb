@@ -1,7 +1,7 @@
 {
   id: task.id,
-  description: task.description,
   category_id: task.category_id,
+  description: task.description,
   completed: task.completed,
   start: task.start,
   duration: task.duration,

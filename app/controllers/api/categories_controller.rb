@@ -1,6 +1,8 @@
 class Api::CategoriesController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    @categories = Category.all
+    @categories = current_user.categories
     render "index.json.jb"
   end
 
@@ -8,19 +10,19 @@ class Api::CategoriesController < ApplicationController
     @category = Category.new(
       name: params[:name],
       image: params[:image],
-      user_id: params[:user_id],
+      user_id: current_user.id,
     )
     @category.save
     render "show.json.jb"
   end
 
   def show
-    @category = Category.find_by(id: params[:id])
+    @category = current_user.categories.find_by(id: params[:id])
     render "show.json.jb"
   end
 
   def update
-    @category = Category.find_by(id: params[:id])
+    @category = current_user.categories.find_by(id: params[:id])
     @category.name = params[:name] || @category.name
     @category.image = params[:image] || @category.image
     @category.user_id = params[:user_id] || @category.user_id
@@ -29,7 +31,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find_by(id: params[:id])
+    @category = current_user.categories.find_by(id: params[:id])
     @category.destroy
     render json: { message: "Category successfully deleted" }
   end
