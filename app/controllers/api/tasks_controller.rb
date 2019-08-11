@@ -1,6 +1,11 @@
 class Api::TasksController < ApplicationController
   before_action :authenticate_user
 
+  def show
+    @task = Task.find_by(id: params[:id])
+    render "show.json.jb"
+  end
+
   def create
     @task = Task.new(
       category_id: params[:category_id],
