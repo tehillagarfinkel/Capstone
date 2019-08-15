@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
     create_table :tasks do |t|
       t.string :description
       t.integer :category_id
-      t.boolean :completed
+      t.boolean :completed, default: false
       t.datetime :start
       t.integer :duration
       t.datetime :due_date

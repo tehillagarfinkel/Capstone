@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_010351) do
   create_table "tasks", force: :cascade do |t|
     t.string "description"
     t.integer "category_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "start"
     t.integer "duration"
     t.datetime "due_date"
