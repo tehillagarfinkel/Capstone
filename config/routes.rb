@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     delete "categories/:id" => "categories#destroy"
 
     get "calendars" => "calendars#index"
+    get "calendars/compute" => "calendars#compute"
   end
 end

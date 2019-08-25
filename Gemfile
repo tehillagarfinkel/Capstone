@@ -44,3 +44,11 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "http"
 gem "rack-cors"
 gem "jb"
+gem "figaro"
+
+gem "google-api-client", require: ["google/apis/calendar_v3"]
+# gem "google/apis/calendar_v3"
+gem "googleauth", require: ["googleauth/stores/file_token_store"]
+# gem "googleauth/stores/file_token_store"
+gem "date"
+gem "fileutils"
