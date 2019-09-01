@@ -22,7 +22,7 @@ class Api::TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
     @task.description = params[:description] || @task.description
     @task.category_id = params[:category_id] || @task.category_id
-    @task.completed = params[:completed] || @task.completed
+    @task.completed = params[:completed].nil? ? @task.completed : params[:completed]
     @task.start = params[:start] || @task.start
     @task.duration = params[:duration] || @task.duration
     @task.due_date = params[:due_date] || @task.due_date

@@ -6,4 +6,8 @@
   start: task.start,
   duration: task.duration,
   due_date: task.due_date,
+  formatted: {
+    start: task.start ? task.start.strftime("%b %e, %l:%M %p") : task.start,
+    due_date: task.due_date ? task.due_date.strftime("%b %e, %l:%M %p") : task.due_date,
+  },
 }
