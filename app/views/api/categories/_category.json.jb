@@ -3,7 +3,7 @@
   name: category.name,
   image: category.image,
   user_id: category.user_id,
-  tasks: category.tasks.map do |task|
+  tasks: category.sorted_tasks.map do |task|
     render partial: "api/tasks/task.json.jb", locals: { task: task }
   end,
 }
